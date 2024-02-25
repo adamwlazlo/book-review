@@ -16,7 +16,7 @@
             $filters = [
             '' => 'Latest',
             'popular_last_month' => 'Popular last Month',
-            'popular_last_6months' => 'Popular last 6 Months',
+            'popular_last_6_months' => 'Popular last 6 Months',
             'highest_rated_last_month' => 'Highest rated last Month',
             'highest_rated_last_6_months' => 'Highest rated last 6 Months',
             ];
@@ -60,4 +60,11 @@
             </li>
         @endforelse
     </ul>
+
+    @if($books->count())
+        <nav class="mt-4">
+            {{ $books->links() }}
+        </nav>
+    @endif
+
 @endsection
