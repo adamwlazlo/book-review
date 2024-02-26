@@ -65,7 +65,7 @@ class BookController extends Controller
             20,
             fn() => Book::with([
 //            'reviews' => fn($query) => $query->latest(),
-            'reviews' => fn($query) => $query->orderBy('rating', 'asc')->latest()
+            'reviews' => fn($query) => $query->orderBy('rating', 'desc')->latest()
         ])->withReviewsCount()->withAverageRating()->findOrFail($id)
 
         );
